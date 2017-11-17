@@ -30,6 +30,10 @@ body {
 .text-white-50{
   color: rgba(255, 255, 255, 0.5)!important;
 }
+.bg-landscape {
+  background: url('../img/landscape-large1.jpg');
+  background-size: cover;
+}
 
 /* LOGIN/SIGNUP */
 .login-signup {

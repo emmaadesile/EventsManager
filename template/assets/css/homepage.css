@@ -24,7 +24,7 @@ body {
   text-transform: uppercase;
 }
 
-.btn:hover {
+.btn:hover, .btn:active {
   color:#eee;
   background: rgb(53, 53, 53);
   border-color: rgb(53, 53, 53);
