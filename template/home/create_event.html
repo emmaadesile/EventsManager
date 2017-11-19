@@ -55,24 +55,29 @@
     <!-- CREATE EVENT FORM -->
     <section class="container">
       <div class="row">
-        <div class="col-12 col-md-8 mx-auto my-2">
+        <div class="col-12 col-md-7 mx-auto my-2">
             <div class="form-group">
               <form role="form" action="post" id="">
                 <!-- EVENT TITLE -->
                 <label for="event-title" class="font-weight-bold">Event title</label>
-                <input type="text" class="form-control event-input" placeholder="Give a short distinct name">
+                <input type="text" class="form-control mb-4" placeholder="Give a short distinct name">
                 <!-- EVENT CENTER -->
                 <label for="event-center" class="font-weight-bold">Center for Event</label>
-                <input type="text" class="form-control event-input" placeholder="Location for the event">
+                <select class="form-control mb-4">
+                  <option value="center1">Center1</option>
+                  <option value="center2">Center2</option>
+                  <option value="center3">Center3</option>
+                  <option value="center4">Center4</option>
+                </select>
                 <!-- EVENT DATE -->
                 <div class="row">
                   <div class="col-12 col-sm-6">
                     <label for="event-center" class="font-weight-bold">Starts</label>
-                    <input type="date" class="form-control event-input">
+                    <input type="date" class="form-control mb-4">
                   </div>
                   <div class="col-12 col-sm-6">
                     <label for="event-center" class="font-weight-bold">Ends</label>
-                    <input type="date" class="form-control event-input">
+                    <input type="date" class="form-control mb-4">
                   </div>
                 </div>                
                 <!-- EVENT DESCRIPTION -->
@@ -89,7 +94,7 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="fixed-bottom text-center text-white-50 pt-3 bg-darkgrey">
+  <footer class="text-center text-white-50 pt-3 bg-darkgrey">
       <div class="container">
         <div class="row">
           <div class="col-12">
