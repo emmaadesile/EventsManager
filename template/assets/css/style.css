@@ -32,7 +32,7 @@ body {
   color: rgba(255, 255, 255, 0.5)!important;
 }
 .bg-landscape {
-  background: url('../img/landscape-large1.jpg');
+  background: url('../img/adelin.jpg');
   background-size: cover;
 }
 
@@ -54,7 +54,7 @@ body {
 
 /* FORM */
 .form-box {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 8px;
 }
 
