@@ -40,6 +40,10 @@ body {
   background: #212a34;
 }
 
+.box-shadow {
+  box-shadow: 2px 4px 4px rgb(213, 213, 213);
+}
+
 
   /* HEADER */
 .header-padding {

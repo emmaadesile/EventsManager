@@ -22,9 +22,13 @@
       </button>
       <div class="collapse navbar-collapse justify-content-md-end" id="navbarCollapse">
         <ul class="navbar-nav">
+            <form class="form-inline">
+              <input type="text" class="form-control bg-dark my-0 border-dark" placeholder="Search for centers">
+            </form>
           <li class="nav-item">
             <a class="nav-link" href="dashboard.html">Home <span class="sr-only">(current)</span></a>
-          </li>        
+          </li>    
+          
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Events</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
@@ -33,6 +37,7 @@
               <a class="dropdown-item" href="delete_event.html">Delete Event</a>
             </div>
           </li>
+          <li class="nav-item"><a href="centers.html" class="nav-link">Centers</a></li>
           <li class="nav-item">
             <a class="nav-link" href="../index.html">Logout</a>
           </li>
@@ -42,7 +47,7 @@
     </nav>
 
   <!-- WELCOME MESSAGE -->
-  <main class="homepage mt-4">
+  <section class="homepage mt-4">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-12">
@@ -55,16 +60,26 @@
     <section class="container">
       <div class="row">
         <div class="col-12 col-md-8 mx-auto my-2">
-          <h4>Upcomming Events</h4>
+          <h4>Your Events</h4>
           
-          <table></table>
+          <div class="card card-body">
+            <h4 class="card-title">Birthday Party</h4>
+            <p class="">This event is holding at center1 and it is slated for 10/1/2018</p>            
+              <button class="btn btn-info col-md-3">View</button>
+          </div>
+
+          <div class="card card-body">
+              <h4 class="card-title">Wedding Party</h4>
+              <p class="">This event is holding at center2 and it is slated for 12/2/2018</p>            
+                <button class="btn btn-info col-md-3">View</button>
+            </div>
           
         </div>
       </div>
       
     </section>
 
-  </main>
+  </section>
 
   <!-- FOOTER -->
   <footer class="text-center text-white-50 bg-darkgrey pt-3">
