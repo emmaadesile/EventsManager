@@ -11,4 +11,6 @@ app.get('/', (req, res) => {
   res.send('Server is up and running')
 })
 
-app.listen(9000);
+app.listen(9000, () => {
+  console.log('app started')
+});
