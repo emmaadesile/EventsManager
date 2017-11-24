@@ -2,35 +2,35 @@ const events = [
   {
       id: 1,
       name:"Valedictory",
-      center: "Balmoral",
+      center: "Baywatch Events Center",
       facilities:"Projector, Stage lights",
       date:"12/12/2017"
   },
   {
       id:2,
       name:"Wedding Ceremony",
-      center: "Faith Plaza",
+      center: "Boldview Event center",
       facilities:"Projector, Stage lights",
       date:"12/12/2017"
   },
   {
       id:3,
       name:"Get together",
-      center: "Five Points",
+      center: "CrownTop Event center",
       facilities:"Projector, Stage lights",
       date:"12/12/2017"
   },
   {
       id:4,
       name:"Seminar",
-      center: "Balmoral",
+      center: "The Jewel Center",
       facilities:"Projector, Stage lights",
       date:"12/12/2017"
   },
   {
       id:5,
       name:"Conference",
-      center: "Radisson Blu",
+      center: "OpenArms",
       facilities:"Projector, Stage lights",
       date:"12/12/2017"
   }
