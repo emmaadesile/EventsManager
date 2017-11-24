@@ -10,5 +10,5 @@ app.use(bodyParser.json());
 app.use(require('./controllers'));
 
 app.listen(9000, () => {
-  console.log('app started')
+  console.log('server is running')
 });
