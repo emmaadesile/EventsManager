@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <title>Events Manager</title>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-darkgrey">
+    <div class="container">
+      <a class="navbar-brand" href="#">Events Manager</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" 
+      aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-md-end" id="navbarCollapse">
+        <ul class="navbar-nav">
+            <form class="form-inline">
+              <input type="text" class="form-control bg-dark my-0 border-dark" placeholder="Search for centers">
+            </form>
+          <li class="nav-item">
+            <a class="nav-link" href="dashboard.html">Home<span class="sr-only">(current)</span></a>
+          </li>        
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Events</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="create_event.html">Create Event</a>
+              <a class="dropdown-item" href="modify_event.html">Modify Event</a>
+              <a class="dropdown-item" href="delete_event.html">Delete Event</a>               
+            </div>
+          </li>
+          <li class="nav-item"><a href="centers.html" class="nav-link">Centers</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href=",,/index.html">Logout</a>
+          </li>
+        </ul>
+      </div>
+      </div>
+    </nav>
+
+  <!-- WELCOME MESSAGE -->
+  <main class="homepage mt-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12">
+          <h2 class="display-5 text-center">Delete Event</h2>
+          <hr>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADD CENTER FORM -->
+    <section class="container">
+      <div class="row">
+        <div class="col-12 col-md-8 mx-auto my-2">
+          <table class="table-bordered" ></table>
+            
+          <button type="button" role="submit" class="btn btn-info btn-left col-12 col-md-3" style="margin-top: 2rem">Delete</button>
+            
+        </div>
+      </div>
+      
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="text-center text-white-50 bg-darkgrey pt-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+             <p> &copy; 2017 Events Manager | All rights reserved</p>
+          </div>
+        </div>
+      </div>      
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery-3.1.1.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+</body>
+</html>
+  

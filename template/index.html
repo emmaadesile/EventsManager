@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Events Manager</title>
+</head>
+<body class="bg-sky">
+
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-darkgrey">
+      <div class="container">
+        <a class="navbar-brand" href="#">Events Manager</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" 
+        aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-md-end" id="navbarCollapse">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="home/dashboard.html">Dashboard <span class="sr-only">(current)</span></a>
+            </li>        
+          </ul>
+        </div>
+        </div>
+      </nav>      
+
+      
+      
+      <section class="container">
+        <div class="row mt-5em align-items-center">  
+
+          <!-- HEADER -->
+          <div class="col-12 col-md-8">
+            <h3 class="display-4 text-white-50">Thinking about your <br> Next event?</h3>
+            <p class="lead text-white-50">We handle the logistics of booking a venue</p>            
+            
+          </div>
+          
+          <!-- LOGIN FORM -->
+          <div class="col-12 col-md-4">
+            <div class="form-box form-signup">              
+                <div class="form-group">
+                    <div class="form-top pt-pb">
+
+                      <!-- LOGIN TOP TEXT -->
+                      <div class="form-top-text">
+                        <h3>Login</h3>
+                      </div>
+                  </div>  
+                  
+                  <!-- LOGIN FORMFIELD -->
+                  <div class="form-bottom pt-pb">
+                      <form role="form" action="post" id="need-validation">
+                        <div class="form-group">
+                          <label class="sr-only" for="form-firsname">Username</label>
+                          <input type="text" class="form-control mt-mb" placeholder="Username" required>
+
+                          <label class="sr-only" for="form-firsname">Password</label>
+                          <input type="text" class="form-control mt-mb" placeholder="Password" required>
+
+                          <label class="check text-white-50">
+                            <input type="checkbox" value="remember-me"> Remember me 
+                          </label>
+
+                          <button type="submit" class="btn btn-info btn-block mb-3 mb-2">Login</button>
+    
+                          <p class="text-center text-white-50"> Not yet a member? <a class="" href="signup.html"> Signup</a></p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      <!-- FOOTER -->
+      <footer class="fixed-bottom text-center text-white-50 pb-3">
+        &copy; 2017 Events Manager 
+      </footer>
+    
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery-3.1.1.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>
