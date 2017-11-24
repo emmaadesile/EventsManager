@@ -7,9 +7,7 @@ const app = express();
 app.use(bodyParser.json());
 
 
-app.get('/', (req, res) => {
-  res.send('Server is up and running')
-})
+app.use(require('./controllers'));
 
 app.listen(9000, () => {
   console.log('app started')
