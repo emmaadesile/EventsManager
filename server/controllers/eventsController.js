@@ -1,5 +1,5 @@
 import express from 'express';
-import router from express.Router();
+const router = express.Router();
 
 global.events = [
   {
@@ -17,6 +17,6 @@ router.get('/', (req, res) => {
   })
 });
 
-export {router}
+export {events}
 
 

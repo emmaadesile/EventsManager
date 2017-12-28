@@ -1,7 +1,7 @@
-import centers from '../models/centers';
+import centers from '../model/centers';
 // import validate from '../middleware/validate';
 
-class centerController {
+class centersController {
   /**
    * 
    * 
@@ -118,8 +118,8 @@ class centerController {
    * @memberof centerController
    */
   static deleteCenter(req, res) {
-    for (let i=0; i < centers.length; i++){
-      if(centers[i].id === parseInt(req.params.id, 10)){
+    for (const center of centers){
+      if(centers.id === parseInt(req.params.id, 10)){
         centers.splice(i,1);
           return res.json({
             message: "Center Deleted",
@@ -135,4 +135,4 @@ class centerController {
 
 }
 
-export default centerController;
+export default centersController;
