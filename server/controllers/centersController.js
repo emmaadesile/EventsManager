@@ -1,4 +1,4 @@
-import centers from '../model/centers';
+import centers from '../models/centers';
 // import validate from '../middleware/validate';
 
 class centersController {
@@ -12,9 +12,9 @@ class centersController {
    * @memberof centerController
    */
   static getAllCenters(req, res) {
-    return res.json({
+    return res.status(200).json({
       centers: centers,
-      error: false
+      status: 'success'
     });   
   }
   
@@ -88,12 +88,12 @@ class centersController {
   * @memberof centerController
   */
   static updateCenter(req, res) {
-    for (let i=0; i < centers.length; i++){
-      if (centers[i].id === parseInt(req.params.id, 10)){
-        centers[i].name = req.body.name || centers[i].name;
-        centers[i].location = req.body.location || centers[i].location;
-        centers[i].facilities = req.body.facilities || centers[i].facilities;
-        centers[i].description = req.body.description || centers[i].description;  
+    for (const center of centers){
+      if (centers.id === parseInt(req.params.id, 10)){
+        center.name = req.body.name || center.name;
+        center.location = req.body.location || centers.location;
+        center.facilities = req.body.facilities || centers.facilities;
+        center.description = req.body.description || center.description;  
     
         return res.json({
           message: "Success",

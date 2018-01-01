@@ -4,8 +4,8 @@ import * as Centers  from './controllers/centersController';
 import * as Events  from './controllers/eventsController';
 
 const app = express();
-//const events = new Events();
-//const centers = new Centers();
+// const events = new Events();
+// const centers = new Centers();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
