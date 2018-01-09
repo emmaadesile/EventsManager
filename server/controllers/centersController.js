@@ -1,5 +1,5 @@
-import centers from '../models/centers';
-// import validate from '../middleware/validate';
+//import centers from '../models/centers';
+
 
 class centersController {
   /**
@@ -13,7 +13,7 @@ class centersController {
    */
   static getAllCenters(req, res) {
     return res.status(200).json({
-      centers: centers,
+      centers,
       status: 'success'
     });   
   }

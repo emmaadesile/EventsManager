@@ -1,4 +1,4 @@
-import events from '../models/events';
+//import events from '../models/events';
 
 
 class eventsController {
@@ -11,7 +11,7 @@ class eventsController {
    * @returns {json} gets all events
    * @memberof events
    */
-  getAllEvents (req, res){
+  static getAllEvents (req, res){
     res.status(200).json({
       events: events,
       error: false
@@ -23,11 +23,11 @@ class eventsController {
    * Get an Event
    * @param {any} req
    * @param {any} res
-   * @returns {json} gets all events
+   * @returns {json} gets an event
    * @memberof events
    */
 
-   getEvent (req, res) {
+   static getEvent (req, res) {
       for (const event of events){
         if (event.id === parseInt(req.params.id, 10)){
           res.json({
@@ -52,7 +52,7 @@ class eventsController {
    * @memberof events
    */
 
-   createEvent (req, res) {
+   static createEvent (req, res) {
      if (!req.body.name || !req.body.center || !request.body.date) {
        return res.status(400).json({
           message: 'Please fill in all required fields',
@@ -77,7 +77,7 @@ class eventsController {
    * @memberof events
    */
 
-  editEvent(req, res) {    
+  static updateEvent(req, res) {    
     for (const event of events) {
       if (event.id === parseInt(req.params.id, 10)){
         event.name = req.body.name;
@@ -105,7 +105,7 @@ class eventsController {
    * @memberof events
    */
   
-  deleteEvent (req, res) {
+  static deleteEvent (req, res) {
     for (const event of events) {
       if (event.id === parseInt(req.params.id)) {
         events.splice(event, 1);
