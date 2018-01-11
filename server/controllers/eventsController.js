@@ -1,8 +1,7 @@
-//import events from '../models/events';
+import events from '../models1/events';
 
 
 class eventsController {
-
   /**
    *
    * Get all events
@@ -12,7 +11,7 @@ class eventsController {
    * @memberof events
    */
   static getAllEvents (req, res){
-    res.status(200).json({
+    return res.status(200).send({
       events: events,
       error: false
     });
@@ -30,14 +29,14 @@ class eventsController {
    static getEvent (req, res) {
       for (const event of events){
         if (event.id === parseInt(req.params.id, 10)){
-          res.json({
+          return res.json({
             event: event,
             message: 'success',
             error: false
           })
         };
       }
-      res.status(404).json({
+      return res.status(404).json({
         message: 'Event not found',
         error: true
       });
@@ -62,7 +61,8 @@ class eventsController {
      const Id = events.length + 1;
      events.push(Id);
      events.push(req.body);
-     res.json({
+
+     return res.json({
        message: 'Success',
        error: false
      });
@@ -90,7 +90,7 @@ class eventsController {
         error: false
       })
     };
-    res.status(404).json({
+    return res.status(404).json({
       message: 'Event no found',
       error: true
     });
@@ -105,7 +105,7 @@ class eventsController {
    * @memberof events
    */
   
-  static deleteEvent (req, res) {
+ static deleteEvent (req, res) {
     for (const event of events) {
       if (event.id === parseInt(req.params.id)) {
         events.splice(event, 1);
@@ -115,13 +115,11 @@ class eventsController {
         error: false
       });
     }
-    res.json(404).json({
+    return res.json(404).json({
       message: 'Event not found',
       error: true
     });
   }
 }
 
-export default eventsController
-
-
+export default eventsController;

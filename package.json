@@ -32,6 +32,7 @@
   "homepage": "https://github.com/emmaadesile/EventsManager#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.1",
     "babel-polyfill": "^6.26.0",
     "babel-preset-airbnb": "^2.4.0",
     "babel-register": "^6.26.0",
@@ -45,7 +46,6 @@
     "nodemon": "^1.12.1"
   },
   "dependencies": {
-    "babel-eslint": "^8.2.1",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "morgan": "^1.9.0",

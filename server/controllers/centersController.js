@@ -1,5 +1,4 @@
-//import centers from '../models/centers';
-
+import centers from '../models1/centers';
 
 class centersController {
   /**
@@ -41,7 +40,7 @@ class centersController {
       error: true  
     }); 
   }
-    
+    ;
   /**
    * 
    * 
@@ -96,7 +95,7 @@ class centersController {
         center.description = req.body.description || center.description;  
     
         return res.json({
-          message: "Success",
+          message: "Center updated successfully",
           error: false,
           centers
         });        
