@@ -21,7 +21,7 @@ server.listen(port, () => {
 
 // app.use('routes', routes);
 app.use(router);
-app.get('/', (req, res) => res.status(200).send({
+app.get('*', (req, res) => res.status(200).send({
   message: 'Welcome to the Events Manager API'
   }));
 

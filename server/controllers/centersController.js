@@ -1,6 +1,6 @@
 import centers from '../models1/centers';
 
-class centersController {
+export class CentersController {
   /**
    * 
    * 
@@ -134,4 +134,3 @@ class centersController {
 
 }
 
-export default centersController;

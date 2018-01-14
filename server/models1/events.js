@@ -1,4 +1,5 @@
-const events = [
+const events = 
+[
   {
       id: 1,
       name:"Valedictory",

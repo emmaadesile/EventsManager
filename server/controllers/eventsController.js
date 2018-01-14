@@ -1,7 +1,6 @@
 import events from '../models1/events';
 
-
-class eventsController {
+class EventsController {
   /**
    *
    * Get all events
@@ -11,9 +10,8 @@ class eventsController {
    * @memberof events
    */
   static getAllEvents (req, res){
-    return res.status(200).send({
-      events: events,
-      error: false
+    return res.status(200).json({
+      events
     });
   }
 
@@ -28,17 +26,15 @@ class eventsController {
 
    static getEvent (req, res) {
       for (const event of events){
-        if (event.id === parseInt(req.params.id, 10)){
-          return res.json({
-            event: event,
+        if (event.id === parseInt(req.params.eventId, 10)){
+          return res.status(200).json({
+            event,
             message: 'success',
-            error: false
           })
         };
       }
       return res.status(404).json({
         message: 'Event not found',
-        error: true
       });
    }
 
@@ -51,21 +47,20 @@ class eventsController {
    * @memberof events
    */
 
-   static createEvent (req, res) {
-     if (!req.body.name || !req.body.center || !request.body.date) {
-       return res.status(400).json({
-          message: 'Please fill in all required fields',
-          error: true
+  static createEvent (req, res) {
+    const eventDetails = [req.body.name, req.body.center, req.body.date, req.body.description, req.body.facilities]; 
+    const validateDetails = eventDetails.every(detail => true);
+      if (validateDetails === true) {
+        req.body.id = events.length + 1;
+        events.push(req.body);
+   
+        return res.status(202).json({
+         message: 'Success',
        });
      }
-     const Id = events.length + 1;
-     events.push(Id);
-     events.push(req.body);
-
-     return res.json({
-       message: 'Success',
-       error: false
-     });
+     return res.status(400).json({
+      message: 'Please fill in all required fields'
+    });
    }
 
   /**
@@ -79,20 +74,18 @@ class eventsController {
 
   static updateEvent(req, res) {    
     for (const event of events) {
-      if (event.id === parseInt(req.params.id, 10)){
-        event.name = req.body.name;
-        event.center = req.body.center;
-        event.description = req.body.description;
-        event.date = req.body.date;
+      if (event.id === parseInt(req.params.eventId, 10)){
+        event.name = req.body.name || event.name;
+        event.center = req.body.center || event.center;
+        event.description = req.body.description || event.description;
+        event.date = req.body.date || event.date;
       }
-      return res.json({
-        message: 'Event updated successfully',
-        error: false
+      return res.status(202).json({
+        message: 'Event updated successfully'
       })
     };
     return res.status(404).json({
-      message: 'Event no found',
-      error: true
+      message: 'Event no found'
     });
   }
 
@@ -107,19 +100,17 @@ class eventsController {
   
  static deleteEvent (req, res) {
     for (const event of events) {
-      if (event.id === parseInt(req.params.id)) {
+      if (event.id === parseInt(req.params.eventId)) {
         events.splice(event, 1);
       }
-      return res.json({
-        message: 'Event deleted successfully',
-        error: false
+      return res.status(204).json({
+        message: 'Event deleted successfully'
       });
     }
     return res.json(404).json({
-      message: 'Event not found',
-      error: true
+      message: 'Event not found'
     });
   }
 }
 
-export default eventsController;
+export default EventsController;
