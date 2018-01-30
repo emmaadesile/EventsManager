@@ -1,6 +1,6 @@
 import centers from '../models1/centers';
 
-export class CentersController {
+class CentersController {
   /**
    * 
    * 
@@ -13,7 +13,6 @@ export class CentersController {
   static getAllCenters(req, res) {
     return res.status(200).json({
       centers,
-      status: 'success'
     });   
   }
   
@@ -26,18 +25,16 @@ export class CentersController {
    * @returns A single center
    * @memberof centerController
    */
-  static getSingleCenter(req, res) {
-    for (let i=0; i < centers.length; i++){
-      if(centers[i].id === parseInt(req.params.id, 10)){
-        return res.json({
-          message: centers[i],
-          error: false 
+  static getCenter(req, res) {
+    for (const center of centers){
+      if(center.id === parseInt(req.params.centerId, 10)){
+        return res.status(202).json({
+          message: center,
         });  
       } 
     } 
     return res.status(404).json({
       message: "Center not Found",
-      error: true  
     }); 
   }
     ;
@@ -50,17 +47,16 @@ export class CentersController {
    * @returns Success message with the list of centers
    * @memberof centerController
    */
-  static postCenter(req, res) {
+  static createCenter(req, res) {
     if((!req.body.name) || (!req.body.location) || (!req.body.facilities)){
       return res.json({
         message: centers,
-        error: true
       });
     }
-    const newId = centers.length + 1;
-    const name = req.body.name;
-    const location = req.body.location;
-    const facilities = req.body.facilities;
+    const newId       = centers.length + 1;
+    const name        = req.body.name;
+    const location    = req.body.location;
+    const facilities  = req.body.facilities;
     const description = req.body.description;
 
     centers.push({
@@ -71,9 +67,7 @@ export class CentersController {
       description
     });
     return res.json({
-      message: "success",
-      error: false,
-      centers
+      center
     }); 
   }
 
@@ -88,22 +82,20 @@ export class CentersController {
   */
   static updateCenter(req, res) {
     for (const center of centers){
-      if (centers.id === parseInt(req.params.id, 10)){
+      if (center.id === parseInt(req.params.centerId, 10)){
         center.name = req.body.name || center.name;
         center.location = req.body.location || centers.location;
         center.facilities = req.body.facilities || centers.facilities;
-        center.description = req.body.description || center.description;  
+        center.description = req.body.description || center.description; 
     
-        return res.json({
+        return res.status(202).json({
+          center,
           message: "Center updated successfully",
-          error: false,
-          centers
         });        
       } 
     }
     return res.status(404).json({
       message: "Center not Found",
-      error: true
     }); 
   }    
     
@@ -118,11 +110,10 @@ export class CentersController {
    */
   static deleteCenter(req, res) {
     for (const center of centers){
-      if(centers.id === parseInt(req.params.id, 10)){
-        centers.splice(i,1);
-          return res.json({
+      if(center.id === parseInt(req.params.centerId, 10)){
+        centers.splice(center, 1);
+          return res.status(202).json({
             message: "Center Deleted",
-            error: false
           });  
       }
     }
@@ -134,3 +125,4 @@ export class CentersController {
 
 }
 
+export default CentersController;

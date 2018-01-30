@@ -1,50 +1,48 @@
 'use strict';
-module.exports = class CenterModel {
-  constructor(sequelize, DataTypes) {
-    this.sequelize = sequelize;
-    this.DataTypes = DataTypes;
-  }
+module.exports = (sequelize, Datatypes) => {
+  const Center = sequelize.define('Center', {
+    name: {
+      type: Datatypes.STRING,
+      allowNull: false,
+    },
+    centerid: {
+      type: Datatypes.INTEGER,
+      allowNull: false,
+    },
+    facilities: {
+      type: Datatypes.STRING,
+      allowNull: false,
+    },  
+    address: {
+      type: Datatypes.STRING,
+      allowNull: false,
+    },
+    state: {
+      type: Datatypes.STRING,
+      allowNull: false,
+    },
+    amount: {
+      type: Datatypes.INTEGER,
+      allowNull: false,
+    },
+    capacity: {
+      type: Datatypes.INTEGER,
+      allowNull: false,
+    }
+  });
 
-  centerModel () {
-    const centerModel = this.sequelize.define('centerModel', {
-      name: {
-        type: this.DataTypes.STRING,
-        allowNull: false,
-        unique: true,
-      },
-      description: {
-        type: this.DataTypes.STRING,
-        allowNull: false,
-      },
-      images: {
-        type: this.DataTypes.STRING,
-        allowNull: false,
-      },
-      facilities: {
-        type: this.DataTypes.STRING,
-        allowNull: false,
-      },
-      address: {
-        type: this.DataTypes.STRING,
-        allowNull: false,
-      },
-      state: {
-        type: this.DataTypes.STRING,
-        allowNull: false,
-      },
-      capacity: {
-        type: this.DataTypes.INTEGER,
-        allowNull: false,
-      },
-      cost: {
-        type: this.DataTypes.INTEGER,
-        allowNull: false,
-      },
-      updatedBy: {
-        type: this.DataTypes.INTEGER,
-        allowNull: false,
-      }
+  Center.associate = (models) => {
+    Center.hasMany(models.eventModel, {
+      foreignKey: 'centerid',
+      as: 'events',
     });
-    return centerModel;
-  }
-} 
+
+    Center.belongsTo(models.userModel, {
+      foreignKey: 'ownerid',
+      as: 'events',
+    });
+  };
+
+  return Center;
+
+}

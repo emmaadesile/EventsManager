@@ -29,7 +29,6 @@ class EventsController {
         if (event.id === parseInt(req.params.eventId, 10)){
           return res.status(200).json({
             event,
-            message: 'success',
           })
         };
       }

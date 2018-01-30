@@ -19,8 +19,10 @@ server.listen(port, () => {
   console.log(`The server running on localhost:${port}`);
 });
 
-// app.use('routes', routes);
+//use the router
 app.use(router);
+
+//catch all route
 app.get('*', (req, res) => res.status(200).send({
   message: 'Welcome to the Events Manager API'
   }));

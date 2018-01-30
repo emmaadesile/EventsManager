@@ -42,10 +42,6 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      isAdmin: {
-        type: Sequelize.STRING,
-        primaryKey: false,
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
