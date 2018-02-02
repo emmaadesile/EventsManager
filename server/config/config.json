@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "rpbjnqrj",
-    "password": "Ep9UqDhR4pBnfFipgr4x-tYva4ZxlpgH",
-    "database": "rpbjnqrj",
-    "host": "baasu.db.elephantsql.com",
+    "username": "postgres",
+    "password": "postgres",
+    "database": "events-manager-db",
+    "host": "127.0.0.1",
     "port": 5432,
     "dialect": "postgres"
   },

@@ -1,9 +1,7 @@
 import centers from '../models1/centers';
 
 class CentersController {
-  /**
-   * 
-   * 
+  /** 
    * Get All Centers
    * @param {obj} req 
    * @param {obj} res 
@@ -17,8 +15,6 @@ class CentersController {
   }
   
   /**
-   * 
-   * 
    * @static Get a single center
    * @param {obj} req 
    * @param {obj} res 
@@ -37,10 +33,8 @@ class CentersController {
       message: "Center not Found",
     }); 
   }
-    ;
+
   /**
-   * 
-   * 
    * @static Creates a new center
    * @param {obj} req 
    * @param {obj} res 
@@ -72,8 +66,6 @@ class CentersController {
   }
 
   /**
-  * 
-  * 
   * @static Update a center
   * @param {obj} req 
   * @param {obj} res 
@@ -100,14 +92,13 @@ class CentersController {
   }    
     
   /**
-   * 
-   * 
    * @static Delete an Event
    * @param {obj} req 
    * @param {obj} res 
    * @returns  
    * @memberof centerController
    */
+
   static deleteCenter(req, res) {
     for (const center of centers){
       if(center.id === parseInt(req.params.centerId, 10)){

@@ -15,7 +15,7 @@ class EventsController {
     });
   }
 
-    /**
+  /**
    *
    * Get an Event
    * @param {any} req
@@ -42,19 +42,19 @@ class EventsController {
    * Create Event
    * @param {any} req
    * @param {any} res
-   * @returns {json}gets all events
+   * @returns {json} create event
    * @memberof events
    */
 
   static createEvent (req, res) {
     const eventDetails = [req.body.name, req.body.center, req.body.date, req.body.description, req.body.facilities]; 
     const validateDetails = eventDetails.every(detail => true);
-      if (validateDetails === true) {
+      if (validateDetails) {
         req.body.id = events.length + 1;
         events.push(req.body);
    
         return res.status(202).json({
-         message: 'Success',
+          message: 'Event created successfully',
        });
      }
      return res.status(400).json({
@@ -67,7 +67,7 @@ class EventsController {
    * Update Event
    * @param {any} req
    * @param {any} res
-   * @returns {json}gets all events
+   * @returns {json}update a center
    * @memberof events
    */
 
@@ -93,7 +93,7 @@ class EventsController {
    * Delete Event
    * @param {any} req
    * @param {any} res
-   * @returns {json}gets all events
+   * @returns {json}delete an event
    * @memberof events
    */
   

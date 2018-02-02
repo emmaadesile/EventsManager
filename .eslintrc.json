@@ -1,10 +1,17 @@
 {
-    "root": true,
-    "extends": "airbnb-base",
-    "parser": "babel-eslint",
-    "env": {
-      "node": true,
-      "es6": true,
-      "mocha": true
-    },
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "rules": {
+    "strict": 0,
+    "linebreak-style": 0,
+    "indent": 2
+  },
+  "env": {
+    "node": true,
+    "mocha": true,
+    "es6": true
+  },
+  "settings": {
+      "import/resolver": "node"
+  }
 }

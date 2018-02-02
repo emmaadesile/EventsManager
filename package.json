@@ -9,12 +9,13 @@
   },
   "babel": {
     "presets": [
-      "es2015"
+      "airbnb"
     ]
   },
   "scripts": {
     "lint": "eslint .",
-    "start": "nodemon --watch server --exec babel-node -- server/app.js"
+    "start": "nodemon --watch server --exec babel-node -- server/app.js",
+    "test": "mocha server/test/**/test-server.js --require babel-register"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,11 @@
   },
   "keywords": [
     "API",
-    "Endpoints"
+    "Endpoints",
+    "Postgres",
+    "Sequelize",
+    "Nodejs",
+    "JSON Web Tokens"
   ],
   "author": "Emmanuel Adesile",
   "license": "ISC",
@@ -52,6 +57,7 @@
     "pg": "^7.4.1",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.29.2",
-    "sequelize-cli": "^3.2.0"
+    "sequelize-cli": "^3.2.0",
+    "chai-http": "^3.0.0"
   }
 }
