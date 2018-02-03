@@ -50,7 +50,7 @@ class CentersController {
       centers.push({ id: newId, name, location, facilities });
   
       return res.status(201).json({
-        message: 'Centers created successfully',
+        message: 'Center created successfully',
       });
     }
     return res.status(400).json({

@@ -50,8 +50,8 @@ describe('Test for Centers API Endpoints', () => {
       });
   });
 
-  // update a single event
-  it('should update a SINGLE event on /api/centers/:centerId PUT', () => {
+  // update a single center
+  it('should update a SINGLE center on /api/centers/:centerId PUT', () => {
     return chai.request(app)
       .put('/centers/eventId')
       .then((res) => {
