@@ -8,7 +8,7 @@ const router = express.Router();
 router.get('/api/events', EventsController.getAllEvents);
 router.get('/api/events/:eventId', EventsController.getEvent);
 router.post('/api/events', EventsController.createEvent);
-router.put('/api/event/:eventId', EventsController.updateEvent);
+router.put('/api/events/:eventId', EventsController.updateEvent);
 router.delete('/api/events/:eventId', EventsController.deleteEvent);
 
 //Center router
