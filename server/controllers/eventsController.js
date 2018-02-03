@@ -46,21 +46,22 @@ class EventsController {
    * @memberof events
    */
 
-  static createEvent (req, res) {
-    const eventDetails = [req.body.name, req.body.center, req.body.date, req.body.description, req.body.facilities]; 
-    // const validateDetails = eventDetails.every(detail => true);
+  static createEvent(req, res) {
     if (req.body.name && req.body.center && req.body.date && req.body.description && req.body.facilities) {
-      req.body.id = events.length + 1;
-      events.push(req.body);
+      // create new event details from req.body
+      const [newId, name, center, date, description, facilities] = [events.length + 1, ...req.body];
+      
+      // push event details to events
+      events.push({ id: newId, name, center, date, description, facilities });
   
-      return res.status(202).json({
+      return res.status(200).json({
         message: 'Event created successfully',
       });
-     }
-     return res.status(400).json({
+    }
+    return res.status(400).json({
       message: 'Please fill in all required fields'
     });
-   }
+  }
 
   /**
    *
@@ -80,7 +81,8 @@ class EventsController {
         event.date        = req.body.date || event.date;
       }
       return res.status(200).json({
-        message: 'Event updated successfully'
+        message: 'Event updated successfully',
+        event
       })
     };
     return res.status(404).json({
@@ -97,7 +99,7 @@ class EventsController {
    * @memberof events
    */
   
- static deleteEvent (req, res) {
+  static deleteEvent (req, res) {
     for (const event of events) {
       if (event.id === parseInt(req.params.eventId, 10)) {
         events.splice(event, 1);

@@ -12,6 +12,7 @@ describe('Test for API Endpoints', () => {
       .get('/events')
       .end((err, res) => {
         res.should.have.status(200);
+        res.shoud.be.json;
         done();
       });
   });
@@ -21,6 +22,7 @@ describe('Test for API Endpoints', () => {
       .get('/events/:eventId')
       .end((err, res) => {
         res.should.have.status(200);
+        res.should.be.json;
         done();
       });
   });
@@ -36,7 +38,7 @@ describe('Test for API Endpoints', () => {
         date: '12/12/2018'
       })
       .end((err, res) => {
-        res.should.have.status(202);
+        res.should.have.status(200);
         res.body.should.be.a('object');
         res.body.should.have.property('message');
         res.body.should.have.property('events');
@@ -46,7 +48,11 @@ describe('Test for API Endpoints', () => {
       });
   });
 
-  it('should update a SINGLE event on /api/events/:eventId PUT');
+  it('should update a SINGLE event on /api/events/:eventId PUT', () => {
+    chai.request(app)
+      .put('/events/:eventId')
+      .send()
+  });
   it('should delete an SINGLE event on /api/eventS/:eventId DELETE');
 });
 
