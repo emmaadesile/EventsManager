@@ -49,7 +49,7 @@ class CentersController {
       // push event details to events
       centers.push({ id: newId, name, location, facilities });
   
-      return res.status(202).json({
+      return res.status(201).json({
         message: 'Centers created successfully',
       });
     }
@@ -72,7 +72,7 @@ class CentersController {
         center.location   = req.body.location || centers.location;
         center.facilities = req.body.facilities || centers.facilities;
     
-        return res.status(202).json({
+        return res.status(204).json({
           center,
           message: "Center updated successfully",
         });        

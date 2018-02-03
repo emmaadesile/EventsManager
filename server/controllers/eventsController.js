@@ -54,8 +54,9 @@ class EventsController {
       // push event details to events
       events.push({ id: newId, name, center, date, description, facilities });
   
-      return res.status(200).json({
+      return res.status(201).json({
         message: 'Event created successfully',
+        // events.eventId
       });
     }
     return res.status(400).json({
@@ -80,7 +81,7 @@ class EventsController {
         event.description = req.body.description || event.description;
         event.date        = req.body.date || event.date;
       }
-      return res.status(200).json({
+      return res.status(201).json({
         message: 'Event updated successfully',
         event
       })

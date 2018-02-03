@@ -25,6 +25,7 @@ app.use(router);
 //catch all route
 app.get('*', (req, res) => res.status(200).send({
   message: 'Welcome to the Events Manager API'
-  }));
+  })
+);
 
 export default app;
