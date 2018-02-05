@@ -35,5 +35,5 @@ module.exports = (sequelize, Datatypes) => {
     });
   };
 
-  return Center;
+  return Event;
 }

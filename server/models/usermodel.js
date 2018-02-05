@@ -18,11 +18,11 @@ module.exports = (sequelize, Datatypes) => {
       allowNull: false,
     },
     role: {
-      type: Datatypes.INTEGER
+      type: Datatypes.INTEGER,
     },
     address: {
       type: Datatypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     state: {
       type: Datatypes.STRING,

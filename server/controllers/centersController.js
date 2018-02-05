@@ -10,7 +10,7 @@ class CentersController {
    */
   static getAllCenters(req, res) {
     return res.status(200).json({
-      centers
+      centers,
     });
   }
 
@@ -25,11 +25,13 @@ class CentersController {
   static getCenter(req, res) {
     for (const center of centers) {
       if (center.id === parseInt(req.params.centerId, 10)) {
-        return res.status(202).json({ message: center });
+        return res.status(202).json({ 
+          center, 
+        });
       }
     }
     return res.status(404).json({
-      message: "Center not Found"
+      message: 'Center not Found'
     });
   }
 
@@ -42,22 +44,27 @@ class CentersController {
    */
 
   static createCenter(req, res) {
-    if (req.body.name && req.body.location && req.body.facilities) {
+    if (req.body.name 
+      && req.body.capacity
+      && req.body.address
+      && req.body.area
+      && req.body.state
+      && req.body.facilities
+      && req.body.amount
+      && req.body.description) {
       // create new event details from req.body
-      const [newId, name, location, facilities] = [
-        centers.length + 1,
-        ...req.body
-      ];
+      const [newId, name, capacity, address, area, state, facilities, amount, description] = 
+        [ centers.length + 1, ...req.body ];
 
       // push event details to events
-      centers.push({ id: newId, name, location, facilities });
+      centers.push({ id: newId, name, capacity, address, area, state, facilities, amount, description });
 
       return res.status(201).json({
-        message: "Center created successfully"
+        message: 'Center created successfully'
       });
     }
     return res.status(400).json({
-      message: 'Please fill in all required fields'
+      message: 'Please fill in all required fields',
     });
   }
 
@@ -71,18 +78,23 @@ class CentersController {
   static updateCenter(req, res) {
     for (const center of centers) {
       if (center.id === parseInt(req.params.centerId, 10)) {
-        center.name = req.body.name || center.name;
-        center.location = req.body.location || centers.location;
-        center.facilities = req.body.facilities || centers.facilities;
+        center.name       = req.body.name || center.name;
+        center.capacity   = req.body.capacity || center.capacity;
+        center.address    = req.body.address || center.address;
+        center.area       = req.body.area || center.area;
+        center.state      = req.body.state || center.state;
+        center.amount     = req.body.amount || center.amount;
+        center.facilities = req.body.facilities || center.facilities;
+        center.description = req.body.description || center.description;
 
         return res.status(204).json({
           center,
-          message: "Center updated successfully"
+          message: 'Center updated successfully'
         });
       }
     }
     return res.status(404).json({
-      message: "Center not Found"
+      message: 'Center not Found'
     });
   }
 
@@ -99,12 +111,12 @@ class CentersController {
       if (center.id === parseInt(req.params.centerId, 10)) {
         centers.splice(center, 1);
         return res.status(202).json({
-          message: "Center Deleted"
+          message: 'Center Deleted'
         });
       }
     }
-    return res.status(404).json({
-      message: "Center not Found"
+    return res.status(400).json({
+      message: 'Center not Found'
     });
   }
 }

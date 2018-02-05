@@ -49,16 +49,17 @@ class EventsController {
   static createEvent(req, res) {
     if (
       req.body.name &&
+      req.body.startDate &&
+      req.body.endDate &&
+      req.body.time &&
       req.body.center &&
-      req.body.date &&
       req.body.description &&
-      req.body.facilities
     ) {
       // create new event details from req.body
-      const [newId, name, center, date, description, facilities] = [events.length + 1, ...req.body ];
+      const [newId, name, startDate, endDate, time, center, description, facilities] = [events.length + 1, ...req.body ];
 
       // push event details to events
-      events.push({ id: newId, name, center, date, description, facilities });
+      events.push({ id: newId,  name, startDate, endDate, time, center, description, facilities });
 
       return res.status(201).json({
         message: 'Event created successfully'
@@ -81,10 +82,12 @@ class EventsController {
   static updateEvent(req, res) {
     for (const event of events) {
       if (event.id === parseInt(req.params.eventId, 10)) {
-        event.name = req.body.name || event.name;
-        event.center = req.body.center || event.center;
+        event.name        = req.body.name || event.name;
+        event.startDate   = req.body.startDate || event.startDate;
+        event.endDate     = req.body.endDate || event.endDate;
+        event.time        = req.body.time || event.time;  
+        event.center      = req.body.center || event.center;
         event.description = req.body.description || event.description;
-        event.date = req.body.date || event.date;
       }
       return res.status(201).json({
         message: "Event updated successfully",
@@ -114,7 +117,7 @@ class EventsController {
         message: "Event deleted successfully"
       });
     }
-    return res.status(404).json({
+    return res.status(400).json({
       message: "Event not found"
     });
   }
