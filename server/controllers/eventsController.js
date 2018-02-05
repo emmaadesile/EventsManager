@@ -1,4 +1,4 @@
-import events from "../models1/events";
+import events from '../models1/events';
 
 class EventsController {
   /**
@@ -55,20 +55,17 @@ class EventsController {
       req.body.facilities
     ) {
       // create new event details from req.body
-      const [newId, name, center, date, description, facilities] = [
-        events.length + 1,
-        ...req.body
-      ];
+      const [newId, name, center, date, description, facilities] = [events.length + 1, ...req.body ];
 
       // push event details to events
       events.push({ id: newId, name, center, date, description, facilities });
 
       return res.status(201).json({
-        message: "Event created successfully"
+        message: 'Event created successfully'
       });
     }
     return res.status(400).json({
-      message: "Please fill in all required fields"
+      message: 'Please fill in all required fields'
     });
   }
 

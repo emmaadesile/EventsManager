@@ -48,7 +48,7 @@ describe('Test for Events API Endpoints', () => {
         expect(res.body.message).to.be.an('object').that.includes('Event created successfully');
       })
       .catch((err) => {
-        expect(err).to.have.status(404);
+        expect(err).to.have.status(400);
       });
   });
 
