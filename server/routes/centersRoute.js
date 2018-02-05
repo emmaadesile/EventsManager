@@ -1,6 +1,6 @@
 import centersController from '../controllers/centersController';
 
-//Centers route
+// Centers route
 module.exports = (app) => {
   app.get('/api/centers', centersController.getAllCenters);
   app.get('/api/centers/:centerId', centersController.getCenter);
