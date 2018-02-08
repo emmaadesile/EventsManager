@@ -1,6 +1,7 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../app';
+import fixture from './fixtures/centers-fixture';
 
 const expect = chai.expect;
 
@@ -32,21 +33,14 @@ describe('Test for Centers API Endpoints', () => {
 
   // create an center
   it('should create a SINGLE center on /api/centers POST', () => {
-    return chai.request(app)
+    chai.request(app)
       .post('/centers')
-      .send({
-        name: 'Baywatch Events Center',
-        location: '13, Sanusi Fafunwa, VI, Lagos',
-        facilities: 'Projector, Stage lights',
-      })
-      .then((res) => {
+      .send(fixture.validCenter)
+      .end((err, res) => {
         expect(res).to.have.status(201);
         expect(res).to.be.an('object');
         expect(res).to.be.json;
         expect(res.body.message).to.be.an('object').that.includes('Center created successfully');
-      })
-      .catch((err) => {
-        expect(err).to.have.status(400);
       });
   });
 

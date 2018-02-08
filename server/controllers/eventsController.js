@@ -33,7 +33,7 @@ class EventsController {
       }
     }
     return res.status(404).json({
-      message: "Event not found"
+      message: 'Event not found',
     });
   }
 
@@ -52,14 +52,12 @@ class EventsController {
       req.body.startDate &&
       req.body.endDate &&
       req.body.time &&
-      req.body.center &&
       req.body.description &&
+      req.body.center 
     ) {
       // create new event details from req.body
-      const [newId, name, startDate, endDate, time, center, description, facilities] = [events.length + 1, ...req.body ];
-
-      // push event details to events
-      events.push({ id: newId,  name, startDate, endDate, time, center, description, facilities });
+      req.body.id = events.length + 1;
+      events.push(req.body);
 
       return res.status(201).json({
         message: 'Event created successfully'
@@ -90,12 +88,12 @@ class EventsController {
         event.description = req.body.description || event.description;
       }
       return res.status(201).json({
-        message: "Event updated successfully",
-        event
+        message: 'Event updated successfully',
+        event,
       });
     }
     return res.status(404).json({
-      message: "Event no found"
+      message: 'Event not found'
     });
   }
 

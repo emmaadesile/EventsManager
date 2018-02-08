@@ -7,7 +7,6 @@ const events =
     endDate: '2018-02-24',
     time: '07:00',
     center: 'Baywatch Events Center',
-    date: '12/12/2017',
     description: 'My little brother\'s valecdictory service',
   },
   {
@@ -17,7 +16,6 @@ const events =
     endDate: '2018-02-12',
     time: '18:00',
     description: 'My 20th year wedding anniversary',
-    date: '12/12/2017',
     center: 'Boldview Event center',
   },
   {
@@ -27,7 +25,6 @@ const events =
     endDate: '2018-04-15',
     time: '08:00',
     center: 'CrownTop Event center',
-    date: '12/12/2017',
     description: 'A get together for my friends and I',
   }  
 ];

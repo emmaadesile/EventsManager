@@ -53,11 +53,10 @@ class CentersController {
       && req.body.amount
       && req.body.description) {
       // create new event details from req.body
-      const [newId, name, capacity, address, area, state, facilities, amount, description] = 
-        [ centers.length + 1, ...req.body ];
+     req.body.id = centers.length + 1;
 
       // push event details to events
-      centers.push({ id: newId, name, capacity, address, area, state, facilities, amount, description });
+      centers.push(req.body);
 
       return res.status(201).json({
         message: 'Center created successfully'

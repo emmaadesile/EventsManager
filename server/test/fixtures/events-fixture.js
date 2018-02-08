@@ -1,12 +1,11 @@
 module.exports = {
-  valideEvent: {
+  validEvent: {
     name: 'Wedding Anniversary',
     startDate: '2018-03-30',
     endDate: '2018-03-30',
     time: '10:00',
-    state: 7,
     description: 'A wedding anniversary',
-    center: 1;
+    center: 1,
   },
 
   invalidEventName: {
@@ -14,9 +13,8 @@ module.exports = {
     startDate: '2018-03-30',
     endDate: '2018-03-30',
     time: '10:00',
-    state: 7,
     description: 'A wedding anniversary',
-    center: 1;
+    center: 1,
   },
 
   invalidEventDate: {
@@ -24,7 +22,6 @@ module.exports = {
     startDate: '2018-03-30',
     endDate: '',
     time: '10:00',
-    state: 7,
     description: 'A wedding anniversary',
     center: 1,
   },
@@ -34,19 +31,17 @@ module.exports = {
     startDate: '',
     endDate: '2018-03-30',
     time: '10:00',
-    state: 7,
     description: 'A wedding anniversary',
-    center: 1;
+    center: 1,
   },
 
-  invalidState : {
+  invalidState: {
     name: 'Wedding Anniversary',
     startDate: '2018-03-30',
     endDate: '2018-03-30',
     time: '10:00',
-    state: 38,
     description: 'A wedding anniversary',
-    center: 1;
+    center: 1,
   },
 
   invalidTimeFormat: {
@@ -54,9 +49,8 @@ module.exports = {
     startDate: '2018-03-30',
     endDate: '2018-03-30',
     time: '53:00',
-    state: 7,
     description: 'A wedding anniversary',
-    center: 1;
+    center: 1,
   },
 
   invalidCenter: {
@@ -64,8 +58,7 @@ module.exports = {
     startDate: '2018-03-30',
     endDate: '2018-03-30',
     time: '10:00',
-    state: 7,
     description: 'A wedding anniversary',
-    center: 41;;
+    center: 41,
   }
 }
