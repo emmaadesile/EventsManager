@@ -15,7 +15,10 @@
   "scripts": {
     "lint": "eslint .",
     "start": "nodemon --watch server --exec babel-node -- server/app.js",
-    "test": "mocha server/test/**/**.spec.js --require babel-register"
+    "test1": "mocha server/test/**/**.spec.js --require babel-register",
+    "test": "nyc --reporter=html --reporter=text mocha --exit --compilers js:babel-core/register server/test/**/**.spec.js",
+    "build": "",
+    "coverage": "nyc reporter"
   },
   "repository": {
     "type": "git",
@@ -37,6 +40,7 @@
   "homepage": "https://github.com/emmaadesile/EventsManager#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-polyfill": "^6.26.0",
     "babel-preset-airbnb": "^2.4.0",

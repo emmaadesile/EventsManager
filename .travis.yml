@@ -1,10 +1,15 @@
 language: node_js
 node: 
-  - "stable"
+  - "node"
   - "7"
 
 after_success:
-  - npm run coverage
+  - npm run coveralls
 
 before_script: 
   - cd server
+
+script:
+  - npm test
+  - npm run coverage
+  - npm install
