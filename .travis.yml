@@ -1,6 +1,6 @@
 language: node_js
 node: 
-  - "node"
+  - "stable"
   - "7"
 
 after_success:

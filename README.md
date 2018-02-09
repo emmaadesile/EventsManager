@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/emmaadesile/EventsManager.svg?branch=develop)](https://travis-ci.org/emmaadesile/EventsManager)
+
 # EventsManager
 Events Manager is full stack Javascript Web Application. This app lets you accept applications from clients to use your event center/facilities.
 It declines events when the proposed date is already taken, or suggests an available date.
