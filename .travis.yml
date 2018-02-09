@@ -11,5 +11,5 @@ before_script:
 
 script:
   - npm install
-  - npn run test
+  - npm run test
   - npm run coverage
