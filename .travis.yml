@@ -10,5 +10,6 @@ before_script:
   - cd server
 
 script:
-  - npm run coverage
   - npm install
+  - npn run test
+  - npm run coverage
