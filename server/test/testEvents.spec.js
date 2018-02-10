@@ -44,7 +44,6 @@ describe('Test for Events API Endpoints', () => {
         expect(res).to.be.json;
         expect(res.body).to.be.an('object');
         expect(res.body.message).to.be.an('object').that.includes('Event created successfully');
-        // done();
       });
   });
 
@@ -57,7 +56,6 @@ describe('Test for Events API Endpoints', () => {
         expect(res).to.be.json;
         expect(res).to.have.status(400);
         expect(res).to.have.property('message').that.includes('Please fill in all the fields');
-        // done();
       });
   })
 
