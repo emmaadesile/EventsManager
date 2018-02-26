@@ -1,23 +1,24 @@
 'use strict';
+
 module.exports = (sequelize, Datatypes) => {
   const Event = sequelize.define('Event', {
     name: {
       type: Datatypes.STRING,
       allowNull: false,
     },
-    startdate: {
+    startDate: {
       type: Datatypes.DATE,
       allowNull: false,
     },
-    enddate: {
+    endDate: {
       type: Datatypes.Date,
       allowNull: false,
     },
-    eventid: {
+    eventId: {
       type: Datatypes.INTEGER,
       allowNull: false,
     },
-    userid: {
+    userId: {
       type: Datatypes.INTEGER,
       allowNull: false,
     },
@@ -25,12 +26,12 @@ module.exports = (sequelize, Datatypes) => {
 
   Event.associate = (models) => {
     Event.belongsTo(models.userModel, {
-      foreignKey: 'userid',
+      foreignKey: 'userId',
       onDelete: 'CASCADE',
     });
 
     Event.belongsTo(models.centersModel, {
-      foreignKey: 'centerid',
+      foreignKey: 'centerId',
       onDelete: 'CASCADE',
     });
   };
