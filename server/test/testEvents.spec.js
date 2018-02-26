@@ -21,7 +21,7 @@ describe('Test for Events API Endpoints', () => {
 
   // ============================================================
   // Get a single event
-  it('should list a SINGLE event on /api/events/:eventId GET', () =>{
+  it('should list a SINGLE event on /api/events/:eventId GET', () => {
     return chai.request(app)
       .get('/events/:eventId')
       .then((res) => {

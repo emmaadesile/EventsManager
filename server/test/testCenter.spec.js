@@ -47,7 +47,7 @@ describe('Test for Centers API Endpoints', () => {
   // update a single center
   it('should update a SINGLE center on /api/centers/:centerId PUT', () => {
     return chai.request(app)
-      .put('/centers/eventId')
+      .put('/centers/centerId')
       .then((res) => {
         expect(res).to.have.status(201);
         expect(res).to.be.an('object');

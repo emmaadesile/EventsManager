@@ -11,7 +11,7 @@ class EventsController {
    */
   static getAllEvents(req, res) {
     return res.status(200).json({
-      events
+      events,
     });
   }
 
@@ -28,7 +28,7 @@ class EventsController {
     for (const event of events) {
       if (event.id === parseInt(req.params.eventId, 10)) {
         return res.status(200).json({
-          event
+          event,
         });
       }
     }
@@ -112,11 +112,11 @@ class EventsController {
         events.splice(event, 1);
       }
       return res.status(202).json({
-        message: "Event deleted successfully"
+        message: 'Event deleted successfully'
       });
     }
-    return res.status(400).json({
-      message: "Event not found"
+    return res.status(404).json({
+      message: 'Event not found',
     });
   }
 }
