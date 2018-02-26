@@ -16,7 +16,7 @@
     "lint": "eslint ./server",
     "start": "nodemon --watch server --exec babel-node -- server/app.js",
     "test1": "mocha server/test/**/**.spec.js --require babel-register",
-    "test": "nyc --reporter=html --reporter=text mocha --exit --compilers js:babel-core/register server/test/**/**.spec.js",
+    "test": "nyc --reporter=html --reporter=text mocha --exit --compilers js:babel-core/register server/v1/test/**/**.spec.js",
     "build": "rimraf dist/ && babel ./server --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files", 
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "coveralls": "nyc --reporter=lcov --reporter=text-lcov npm test"

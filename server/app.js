@@ -1,8 +1,8 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import logger from 'morgan';
-import http from 'http';
-import router from './routes/index';
+import express from "express";
+import bodyParser from "body-parser";
+import logger from "morgan";
+import http from "http";
+import router from "./v1/routes/index";
 
 const app = express();
 app.use(logger('dev'));
@@ -19,12 +19,13 @@ server.listen(port, () => {
   console.log(`The server running on localhost:${port}`);
 });
 
-//use the router
+// use the router
 app.use(router);
 
-//catch all route
-app.get('*', (req, res) => res.status(200).send({
-  message: 'Welcome to the Events Manager API'
+// catch all route
+app.get('*', (req, res) =>
+  res.status(200).send({
+    message: 'Welcome to the Events Manager API'
   })
 );
 

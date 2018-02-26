@@ -1,8 +1,7 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import app from '../app';
+import app from '../../app';
 import fixture from './fixtures/centers-fixture';
-
 const expect = chai.expect;
 
 chai.use(chaiHttp);
@@ -21,7 +20,7 @@ describe('Test for Centers API Endpoints', () => {
   });
 
   // Get a single center
-  it('should list a SINGLE center on /api/centers/:eventId GET', () =>{
+  it('should list a SINGLE center on /api/centers/:eventId GET', () => {
     return chai.request(app)
       .get('/events/:eventId')
       .then((res) => {
