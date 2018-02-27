@@ -9,10 +9,6 @@ before_script:
 script:
   - npm install && npm install mocha -g
   
-
 after_success:
-<<<<<<< HEAD
   - npm run coverage
-=======
-  - npm run coverage
->>>>>>> 07644f3fcb98abf8b79ed895f42a3cfa6bbae6c9
+
