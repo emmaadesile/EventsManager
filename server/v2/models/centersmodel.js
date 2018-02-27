@@ -1,18 +1,19 @@
 'use strict';
+
 module.exports = (sequelize, Datatypes) => {
   const Center = sequelize.define('Center', {
     name: {
       type: Datatypes.STRING,
       allowNull: false,
     },
-    centerid: {
+    centerId: {
       type: Datatypes.INTEGER,
       allowNull: false,
     },
     facilities: {
       type: Datatypes.STRING,
       allowNull: false,
-    },  
+    },
     address: {
       type: Datatypes.STRING,
       allowNull: false,
@@ -33,12 +34,12 @@ module.exports = (sequelize, Datatypes) => {
 
   Center.associate = (models) => {
     Center.hasMany(models.eventModel, {
-      foreignKey: 'centerid',
+      foreignKey: 'centerId',
       as: 'events',
     });
 
     Center.belongsTo(models.userModel, {
-      foreignKey: 'ownerid',
+      foreignKey: 'ownerId',
       as: 'events',
     });
   };
