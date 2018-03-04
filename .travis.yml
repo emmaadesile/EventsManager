@@ -8,9 +8,10 @@ before_script:
 
 script:
   - npm install && npm install mocha -g
-  
+
+ after_script:
+ 
 after_success:
-  - npm run coverage
   - npm run coveralls
   
 
