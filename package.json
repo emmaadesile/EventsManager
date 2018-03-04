@@ -19,7 +19,7 @@
     "test": "nyc --reporter=html --reporter=text mocha --exit --compilers js:babel-core/register server/test/**/**.spec.js",
     "build": "rimraf dist/ && babel ./server --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "coveralls": "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
 "
   },
   "repository": {
