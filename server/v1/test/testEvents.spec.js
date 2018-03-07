@@ -40,7 +40,7 @@ describe('Test for Events API Endpoints', () => {
       .post('/events')
       .send(fixture.validEvent)
       .end((err, res) => {
-        expect(res).to.have.status(201);
+        expect(res).to.have.status(204);
         expect(res).to.be.json;
         expect(res.body).to.be.an('object');
         expect(res.body.message).to.be.an('object').that.includes('Event created successfully');
@@ -66,7 +66,7 @@ describe('Test for Events API Endpoints', () => {
     return chai.request(app)
       .put('/events/eventId')
       .then((res) => {
-        expect(res).to.have.status(201);
+        expect(res).to.have.status(204);
         expect(res).to.be.an('object');
         expect(res).to.be.json;
         expect(res.body.message).to.be.an('object').that.includes('Event updated successfully');
@@ -81,7 +81,7 @@ describe('Test for Events API Endpoints', () => {
     return chai.request(app)
       .delete('/events/eventId')
       .then((res) => {
-        expect(res).to.have.status(202);
+        expect(res).to.have.status(204);
         expect(res).to.be.an('object');
         expect(res).to.be.json;
       })

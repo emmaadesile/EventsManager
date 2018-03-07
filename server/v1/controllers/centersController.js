@@ -57,7 +57,7 @@ class CentersController {
       // push event details to events
       centers.push(req.body);
 
-      return res.status(202).json({
+      return res.status(204).json({
         message: "Center created successfully"
       });
     }
@@ -100,7 +100,7 @@ class CentersController {
   /**
    * @static Delete an Event
    * @param {obj} req
-   * @param {obj} res
+   * @param {obj} rens
    * @returns
    * @memberof centerController
    */
@@ -109,7 +109,7 @@ class CentersController {
     for (const center of centers) {
       if (center.id === parseInt(req.params.centerId, 10)) {
         centers.splice(center, 1);
-        return res.status(202).json({
+        return res.status(204).json({
           message: 'Center Deleted'
         });
       }

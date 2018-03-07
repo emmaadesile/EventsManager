@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/emmaadesile/EventsManager.svg?branch=develop)](https://travis-ci.org/emmaadesile/EventsManager)[![Coverage Status](https://coveralls.io/repos/github/emmaadesile/EventsManager/badge.svg?branch=develop)](https://coveralls.io/github/emmaadesile/EventsManager?branch=develop)
+[![Build Status](https://travis-ci.org/emmaadesile/EventsManager.svg?branch=travis)](https://travis-ci.org/emmaadesile/EventsManager)[![Coverage Status](https://coveralls.io/repos/github/emmaadesile/EventsManager/badge.svg?branch=travis)](https://coveralls.io/github/emmaadesile/EventsManager?branch=travis)
 
 # EventsManager
 Events Manager is full stack Javascript Web Application. This app lets you accept applications from clients to use your event center/facilities.

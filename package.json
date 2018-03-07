@@ -31,8 +31,7 @@
     "Postgres",
     "Sequelize",
     "Nodejs",
-    "JSON Web Tokens",
-    "Web app",
+    "JSON Web Tokens"
   ],
   "author": "Emmanuel Adesile",
   "license": "ISC",

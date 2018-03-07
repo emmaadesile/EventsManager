@@ -59,7 +59,7 @@ class EventsController {
       req.body.id = events.length + 1;
       events.push(req.body);
 
-      return res.status(201).json({
+      return res.status(204).json({
         message: 'Event created successfully'
       });
     }
@@ -87,7 +87,7 @@ class EventsController {
         event.center      = req.body.center || event.center;
         event.description = req.body.description || event.description;
       }
-      return res.status(201).json({
+      return res.status(204).json({
         message: 'Event updated successfully',
         event,
       });
@@ -111,7 +111,7 @@ class EventsController {
       if (event.id === parseInt(req.params.eventId, 10)) {
         events.splice(event, 1);
       }
-      return res.status(202).json({
+      return res.status(204).json({
         message: 'Event deleted successfully'
       });
     }

@@ -36,7 +36,7 @@ describe('Test for Centers API Endpoints', () => {
       .post('/centers')
       .send(fixture.validCenter)
       .end((err, res) => {
-        expect(res).to.have.status(201);
+        expect(res).to.have.status(204);
         expect(res).to.be.an('object');
         expect(res).to.be.json;
         expect(res.body.message).to.be.an('object').that.includes('Center created successfully');
@@ -48,7 +48,7 @@ describe('Test for Centers API Endpoints', () => {
     return chai.request(app)
       .put('/centers/centerId')
       .then((res) => {
-        expect(res).to.have.status(201);
+        expect(res).to.have.status(204);
         expect(res).to.be.an('object');
         expect(res).to.be.json;
         expect(res.body.message).to.be.an('object').that.includes('Center updated successfully');
@@ -63,7 +63,7 @@ describe('Test for Centers API Endpoints', () => {
     return chai.request(app)
       .delete('/centers/centerId')
       .then((res) => {
-        expect(res).to.have.status(202);
+        expect(res).to.have.status(204);
         expect(res).to.be.an('object');
         expect(res).to.be.json;
       })
