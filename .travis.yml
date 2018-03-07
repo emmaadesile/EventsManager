@@ -7,9 +7,9 @@ before_script:
   - cd server
 
 script:
-  - npm install && npm install mocha -g
-
- after_script:
+  - npm install
+  - npm test
+  - npm run coverage
  
 after_success:
   - npm run coveralls
